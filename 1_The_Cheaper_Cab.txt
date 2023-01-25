@@ -1,0 +1,38 @@
+input:
+	3
+	30 65
+	42 42
+	90 50
+output:
+	FIRST
+	ANY
+	SECOND
+
+using System;
+public class Test
+{
+	public static void Main()
+	{
+	    int number_of_test_cases;
+	    number_of_test_cases=Convert.ToInt32(Console.ReadLine());
+	    int Cab_x_Charge,Cab_y_Charge;
+	    for(int i=0;i<number_of_test_cases;i++)
+	    {
+	        string[] string_array=Console.ReadLine().Split(' ');
+	        Cab_x_Charge=Convert.ToInt32(string_array[0]);
+	        Cab_y_Charge=Convert.ToInt32(string_array[1]);
+	        if(Cab_x_Charge<Cab_y_Charge)
+	        {
+	            Console.WriteLine("FIRST");
+	        }
+	        else if(Cab_x_Charge>Cab_y_Charge)
+	        {
+	            Console.WriteLine("SECOND");
+	        }
+	        else 
+	        {
+	            Console.WriteLine("ANY");
+	        }
+	    }
+	}
+}
