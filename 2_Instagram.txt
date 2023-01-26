@@ -1,0 +1,33 @@
+Description :- 
+-------------
+	Chef categorises an instagram account as spam, if, the following count of the account is more than 
+	10 times the count of followers i.e., Following >Followers*10
+
+Input :						output:-
+------             					-------
+	4						
+	1 10	-	-	-	-	-	--> NO	
+	10 1 -	-	-	-	-	--> NO
+	11 1 -	-	-	-	-	--> YES
+	97 7 -	-	-	-	-	--> YES
+
+class Program
+{
+	int no_of_accounts_to_be_checked,following,followers;   
+	Console.Write("Enter No. of Accounts to be checked : ");
+	no_of_accounts_to_be_checked=Convert.ToInt32(Console.ReadLine());
+	for(int i=1;i<=no_of_accounts_to_be_checked;i++)
+	{
+		string[ ] following_followers=Console.ReadLine().Split(' ');
+		following=Convert.ToInt32(following_followers[0]);
+		followers=Convert.ToInt32(following_followers[1]);
+		if(following > followers*10)
+		{
+			Console.WriteLine("YES");
+		}
+		else
+		{
+			Console.WriteLine("NO");
+		} 
+	}
+}
