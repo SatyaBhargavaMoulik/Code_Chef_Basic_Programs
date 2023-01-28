@@ -1,0 +1,50 @@
+Description :-
+=======
+		The current volume of the TV is X. Pressing the volume up button of the TV remote increases 
+		the volume by 1while pressing the volume down button decreases the volume by 1.
+		Chef wants to change the volume from X to Y. 
+		Question :- 
+		----------
+			Find the minimum number of button presses required to do so.
+
+
+Input :							Output:
+====							=====
+	2	
+	50 54		- 	-	-	-	->	4
+	12 10		-	-	-	-	->	2
+
+
+class Program
+{
+	static void Main(string[ ] args)
+	{
+		int no_of_test_cases,present_volume,required_volume;
+		Console.WriteLine("Number of test Cases to be checked");
+		no_of_test_cases=Convert.ToInt32(Console.ReadLine( ));
+		for(int i=1;i<=no_of_test_cases;i++)
+		{
+			string[ ] inputs=Console.ReadLine( ).Split(' ');
+			present_volume=Convert.ToInt32(inputs[0]);
+			required_volume=Convert.ToInt32(inputs[1]);
+			if(required_volume>present_volume)
+			{
+				Console.WriteLine(count(present_volume,required_volume));
+			}
+			else
+			{
+				Console.WriteLine(count(required_volume,present_volume));
+			}		
+		}
+	}
+	static int count(int number1,int number1)
+	{
+		int count=0;
+		while(number1<number2)
+		{
+			count++;
+			number1++;	
+		}
+		return count;
+	}
+}
