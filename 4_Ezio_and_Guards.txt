@@ -1,0 +1,58 @@
+Problem :
+======
+	Ezio can manipulate at most X number of guards with the apple of eden.
+	Given that there are Y number of guards, predict if he can safely manipulate all of them.
+
+Input :									
+=====								
+
+	First line will contain T, number of test cases. Then the test cases follow.
+	Each test case contains of a single line of input, two integers X and Y.
+	3
+	5 7
+	6 6
+	9 1
+
+Output :
+======
+	NO
+	YES
+	YES
+
+	Test Case 1:	 Ezio can manipulate at most 5 guards. Since there are 7 guards, he cannot manipulate all of them.
+	-------------
+	Test Case 2 :  	Ezio can manipulate at most 6 guards. Since there are 6 guards, he can manipulate all of them.
+
+	Test Case 3 :	Ezio can manipulate at most 9 guards. Since there is only 1 guard, he can manipulate the guard
+
+Code : 
+====
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		int no_of_test_cases,x,y;
+		no_of_test_cases=Convert.ToInt32(Console.ReadLine());
+		for(int i=1;i<=no_of_test_cases;i++)
+		{
+		    string[] inputs=Console.ReadLine().Split(' ');
+		    x=Convert.ToInt32(inputs[0]);
+		    y=Convert.ToInt32(inputs[1]);
+		    if(x>=y)
+		    {
+		        Console.WriteLine("YES");
+		    }
+		    else
+		    {
+		        Console.WriteLine("NO");
+		    }
+		}
+	}
+}
+
+
+
+
+
