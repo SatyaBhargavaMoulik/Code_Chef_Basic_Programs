@@ -1,0 +1,34 @@
+Description :
+========
+	To access CRED programs, one needs to have a credit score of 750 or more.	
+	If it is possible to access CRED programs, output YES, otherwise output NO
+
+
+Input :						Output :
+--------						---------
+	823	-	-	-	-	->  	YES	
+	251	-	-	-	-	->  	NO
+
+
+Code:
+====
+
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+		int credit_score;
+		credit_score=Convert.ToInt32(Console.ReadLine());
+		if(credit_score>=750)
+		{
+		    Console.WriteLine("YES");
+		}
+		else
+		{
+		    Console.WriteLine("NO");
+		}
+	}
+}
