@@ -1,0 +1,48 @@
+Description : 
+========
+	The current score is A:B,i.e., team 1has scored A goals and team 2 has scored B goals. 
+	Chef wonders if it is possible for the score to become C:D at a later point in the game 
+
+Input Format :
+=========
+	* 1 * The first line contains a single integer T - the number of test cases. Then the test cases follow.
+	* 2 * The first line of each test case contains two integers A and B - the intial number of goals team 1 
+		and team 2 have scored.
+	* 3 * The second line of each test case contains two integers C and D - 
+		the final number of goals team 1 and team 2 must be able to score respectively.
+
+Input :								Output :
+====								======
+	3							
+	1 5	-	-	-	-	-	-	-> 	POSSIBLE
+	3 5
+	3 4	-	-	-	-	-	-	->	IMPOSSIBLE				
+	2 6
+	2 2	-	-	-	-	-	-	->	POSSIBLE
+	2 2
+
+CODE :
+=====
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		int no_of_test_cases;
+		no_of_test_cases=Convert.ToInt32(Console.ReadLine());
+		for(int i=1;i<=no_of_test_cases;i++)
+		{
+		    string[] current_scores=Console.ReadLine().Split(' ');
+		    string[] later_score=Console.ReadLine().Split(' ');
+		    if((Convert.ToInt32(current_scores[0])<=Convert.ToInt32(later_score[0]))&&(Convert.ToInt32(current_scores[1])<=Convert.ToInt32(later_score[1])))
+		    {
+		        Console.WriteLine("POSSIBLE");
+		    }
+		    else
+		    {
+		        Console.WriteLine("IMPOSSIBLE");
+		    }
+		}
+	}
+}
