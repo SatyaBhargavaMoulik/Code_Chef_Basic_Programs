@@ -1,0 +1,66 @@
+Problem :
+======
+	There are X levels remaining in the game, and each level takes Chef Y minutes to complete. 
+	To protect against eye strain, Chef also decides that every time he completes 3 levels, 
+	he will take a Z minute break from playing. Note that there is no need to take this break if the game has been completed.
+	How much time (in minutes) will it take Chef to complete the game?
+
+
+Input Format : 
+==========
+	The first line of input will contain a single integer T, denoting the number of test cases.
+	The first and only line of input will contain three space-separated integers X, Y, and Z.
+
+
+Input :									Output :
+=====									======
+	4
+	2 12 10	-	-	-	-	-	-	->	24           ( 2 x 12 = 24 since levels< 3)
+	3 12 10	-	-	-	-	-	-	->	36	      ( 3 x 12 = 36 since levels =3 break apply only more than 3 levels and not 3)
+	7 20 8	-	-	-	-	-	-	->	156	      ( 7 x 20 = 140 +( 20 / 3 = 2 ) x 8 =156  
+	24 45 15	-	-	-	-	-	-	->	1185	      ( 24 x 45 + ( 24 / 3 = 8 )-1 x 15 = 1185 ( since after 24 levels he will complete so no.of breaks = 7))
+
+
+using System;
+public class Test
+{
+	public static void Main()
+	{
+		int no_of_test_cases;
+		int levels_remaining,time_for_each_level,break_duration;
+
+		no_of_test_cases = Convert.ToInt32(Console.ReadLine());
+
+		for(int i=1;i<=no_of_test_cases;i++)
+		{
+		    string[] inputs_values=Console.ReadLine().Split(' ');
+
+		    levels_remaining=Convert.ToInt32(inputs_values[0]);
+		    time_for_each_level=Convert.ToInt32(inputs_values[1]);
+		    break_duration=Convert.ToInt32(inputs_values[2]);
+
+		    if(levels_remaining<=3)
+		    {
+		        Console.WriteLine(levels_remaining*time_for_each_level);
+		    }
+		    else
+		    {
+		        int time,break_time=0;
+		        time = levels_remaining*time_for_each_level;
+		        if(levels_remaining%3==0)
+		        {
+		            if(levels_remaining>=6)
+		            {
+		                break_time=(levels_remaining/3)-1;
+		            } 
+		        }
+		        else
+		        {
+		            break_time=levels_remaining/3;
+		        }
+		        time=levels_remaining*time_for_each_level + break_time * break_duration;
+		        Console.WriteLine(time);
+		    }
+		}
+	}
+}
