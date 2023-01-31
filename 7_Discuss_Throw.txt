@@ -1,0 +1,50 @@
+Problem :
+======
+	In discus throw, a player is given 3  throws and the throw with the "longest distance" is regarded as their final score.
+
+Input Format:
+=========
+
+	First line will contain T, number of test cases. Then the test cases follow.
+	Each test case contains of a single line of input, three integers A,B, and C denoting the distances in each throw
+
+Input :									Output :
+====									=====
+	3
+	10 15 8	-	-	-	-	-	-	->	   15
+	32 32 32	-	-	-	-	-	-	->	   32
+	82 45 54	-	-	-	-	-	-	->	   82
+
+Coding Approach:
+===========
+
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		// your code goes here
+		int no_of_test_cases, distance_1, distance_2, distance_3;
+        		no_of_test_cases = Convert.ToInt32(Console.ReadLine());
+        		for (int i = 1; i <= no_of_test_cases; i++)
+        		{
+            		string[] distances_thrown = Console.ReadLine().Split(' ');
+            		distance_1 = Convert.ToInt32(distances_thrown[0]);
+            		distance_2 = Convert.ToInt32(distances_thrown[1]);
+            		distance_3 = Convert.ToInt32(distances_thrown[2]);
+            		if ((distance_1 >= distance_2) && (distance_1 >= distance_3))
+            		{
+                			Console.WriteLine(distance_1);
+            		}
+            		else if ((distance_2 >= distance_1) && (distance_2 >= distance_3))
+            		{
+                			Console.WriteLine(distance_2);
+            		}
+            		else
+            		{
+                			Console.WriteLine(distance_3);
+            		}
+        		}
+	}
+}
