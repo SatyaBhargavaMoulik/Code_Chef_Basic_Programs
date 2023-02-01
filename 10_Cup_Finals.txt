@@ -1,0 +1,46 @@
+Problem :
+======
+	Chef only finds a match interesting if the skill difference of the competing teams is less than or equal to D.
+	Given that the skills of the teams competing in the final are X and Y respectively, 
+	determine whether Chef will find the game interesting or not.
+
+Input Format :
+==========
+	The first line of input will contain a single integer T, denoting the number of testcases.
+	Each testcase consists of a single line of input containing three space-separated integers X,Y, and D 
+	— the skill levels of the teams and the maximum skill difference
+
+Input : 							Output :
+=====							======
+	3
+	5 3 4		-	-	-	-	->	YES
+	5 3 1		-	-	-	-	->	NO
+	5 5 0		-	-	-	-	->	YES
+
+
+Coding Approach :
+============
+using System;
+public class Test
+{
+	public static void Main()
+	{
+		int no_of_test_cases,X,Y,D;
+		no_of_test_cases=Convert.ToInt32(Console.ReadLine());
+		for(int i=1;i<=no_of_test_cases;i++)
+		{
+		    string[] inputs=Console.ReadLine().Split(' ');
+		    X=Convert.ToInt32(inputs[0]);
+		    Y=Convert.ToInt32(inputs[1]);
+		    D=Convert.ToInt32(inputs[2]);
+		    if(Math.Abs(X-Y) <= D)
+		    {
+		        Console.WriteLine("YES");
+		    }
+		    else
+		    {
+		        Console.WriteLine("NO");
+		    }
+		}
+	}
+}
